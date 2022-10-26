@@ -15,7 +15,7 @@ import net.minecraft.item.ItemStack;
 
 public class Command {
     public static LiteralArgumentBuilder<CommandSource> getCommand() {
-        return Commands.literal("wondertrade")
+        return Commands.literal("breedinguses")
                 .requires(cs -> PermissionUtil.checkPermAsPlayer(cs, PermissionWrapper.userPermission))
                 .executes(cc -> {
                     Util.send(cc.getSource(), "&b&l(&e&l!&b&l) &cPlease provide a valid argument such as reload or set <uses>");

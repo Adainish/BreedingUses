@@ -5,9 +5,8 @@ import io.github.adainish.breedinguses.util.ItemUtil;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class DaycareListener {
-
     @SubscribeEvent
-    public void onCollectEvent(DayCareEvent.PostEggCalculate event) {
+    public void onCollectEvent(DayCareEvent.PostCollect event) {
         ItemUtil.handleEggProduction(event.getParentOne());
         ItemUtil.handleEggProduction(event.getParentTwo());
     }

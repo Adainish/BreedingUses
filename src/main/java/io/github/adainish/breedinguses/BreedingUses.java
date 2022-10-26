@@ -1,9 +1,11 @@
 package io.github.adainish.breedinguses;
 
+import ca.landonjw.gooeylibs2.implementation.tasks.Task;
 import com.pixelmonmod.pixelmon.Pixelmon;
 import io.github.adainish.breedinguses.command.Command;
 import io.github.adainish.breedinguses.config.Config;
 import io.github.adainish.breedinguses.events.DaycareListener;
+import io.github.adainish.breedinguses.tasks.UpdateBreedingItems;
 import io.github.adainish.breedinguses.util.PermissionWrapper;
 import net.minecraft.server.MinecraftServer;
 import net.minecraftforge.common.MinecraftForge;
@@ -80,6 +82,7 @@ public class BreedingUses {
         server = ServerLifecycleHooks.getCurrentServer();
         //register events
         Pixelmon.EVENT_BUS.register(new DaycareListener());
+        Task.builder().execute(new UpdateBreedingItems()).interval(20).infinite().build();
     }
 
     public void setupDirectories() {
