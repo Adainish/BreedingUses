@@ -46,7 +46,7 @@ public class ItemUtil {
             reduceStackCount(pokemon, pokemon.getOwnerPlayerUUID(), pokemon.getHeldItem().getStack(), 1);
             String msg = Config.getConfig().get().node("ranch-message").getString();
             msg = msg.replace("%{pokemon}", pokemon.getDisplayName())
-                    .replace("%{item}", pokemon.getHeldItem().getStack().getDisplayName().getUnformattedComponentText())
+                    .replace("%{item}", pokemon.getHeldItem().getStack().getItem().getName().getUnformattedComponentText())
                     .replace("%{uses}", String.valueOf(getUseCountLeft(pokemon.getHeldItem().getStack())));
             Util.send(pokemon.getOwnerPlayerUUID(), msg);
         }
