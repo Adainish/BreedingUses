@@ -50,6 +50,7 @@ public class ItemUtil {
                     .replace("%{uses}", String.valueOf(getUseCountLeft(pokemon.getHeldItem().getStack())));
             Util.send(pokemon.getOwnerPlayerUUID(), msg);
         }
+
     }
 
     public static void setStackCount(ItemStack stack, int amount, UUID ownerUUID) {
